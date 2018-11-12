@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="SmokeTest(failed)">
+    <parameter name="environment" value="prod"/>
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="smokeTests.MainPage">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="mainpageLinksCorrectDestination"/>
+        </methods>
+      </class> <!-- smokeTests.MainPage -->
+    </classes>
+  </test> <!-- SmokeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
