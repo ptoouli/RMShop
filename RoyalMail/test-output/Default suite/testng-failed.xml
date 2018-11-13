@@ -2,16 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <parameter name="environment" value="prod"/>
-  <parameter name="browser" value="chrome"/>
+  <parameter name="browser" value="headless"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smokeTests.MainPage">
+      <class name="tests.OMSCheckout">
         <methods>
+          <include name="ProductPage"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="resultsBlockPresent"/>
+          <include name="SearchResults"/>
         </methods>
-      </class> <!-- smokeTests.MainPage -->
+      </class> <!-- tests.OMSCheckout -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

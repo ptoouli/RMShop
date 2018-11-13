@@ -1,12 +1,12 @@
 package pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
 	
@@ -27,13 +27,16 @@ public class MainPage {
 	public WebElement basketButton;
 	//Search Bar
 	@FindBy(id="search")
-	public WebElement searchBar;
+	public static WebElement searchBar;
 	//Results Dropdown block
 	@FindBy(id="klevuResultsBlock")
 	public WebElement resultsBlock;
 	//Result Products
 	@FindBy(id="productsList")
 	public WebElement productsList;
+	//First Result
+	@FindBy (xpath="//*[@id=\"productsList\"]/ul/li/a/div[2]/div[2]")
+	public WebElement firstResult;
 	//OMS Category (only visible once logged in as OMS user)
 	@FindBy(css=".v-navigation__link--url-online-mail-supplies")
 	public WebElement omsCategory;
@@ -52,7 +55,7 @@ public class MainPage {
 		basketButton.click();
 	}
 	
-	public void productSearch(String product) {
+	public static void productSearch(String product) {
 		searchBar.sendKeys(product);
 	}
 	
@@ -64,6 +67,7 @@ public class MainPage {
 	}
 	
 	public MainPage(WebDriver driver) {
+		
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		

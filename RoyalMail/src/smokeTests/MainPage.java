@@ -38,11 +38,11 @@ public class MainPage {
 	}
 	@Test
 	public void searchBarPresent() {
-		Assert.assertTrue(mainPage.searchBar.isDisplayed());
+		Assert.assertTrue(pages.MainPage.searchBar.isDisplayed());
 	}
 	@Test
 	public void resultsBlockPresent() {
-		mainPage.searchBar.sendKeys("s");
+		pages.MainPage.searchBar.sendKeys("s");
 		Assert.assertTrue(mainPage.resultsBlock.isDisplayed());
 	}
 		
@@ -80,11 +80,11 @@ public class MainPage {
 		Assert.assertEquals(driver.getCurrentUrl(),checkoutPage);
 	}
 	
-	@Parameters({"browser", "environment", "driverLocation"})
+	@Parameters({"browser", "environment"})
 	
 	
 	@BeforeMethod
-	public void setUp(String browser, String environment, String driverLocation) {
+	public void setUp(String browser, String environment) {
 		//Define Environment URLs
 		List<String> urls = utilities.Environments.setEnvironment(environment);
 		rmPage = urls.get(0);
@@ -92,7 +92,7 @@ public class MainPage {
 		rmLogin = rmShop + "customer/account/login/";
 		checkoutPage = rmShop + "checkout/cart/";
 		//Initiate driver & mainPage
-		driver = utilities.DriverFactory.open(browser, driverLocation);
+		driver = utilities.DriverFactory.open(browser);
 		driver.get(rmShop);
 		//Initialise web elements
 		mainPage = new pages.MainPage(driver);

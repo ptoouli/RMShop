@@ -2,10 +2,7 @@ package smokeTests;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -46,15 +43,15 @@ public class LoginPage {
 		Assert.assertTrue(customerText.contains("Hi"));
 	}
 	
-	@Parameters({"browser", "environment", "driverLocation"})
+	@Parameters({"browser", "environment"})
 	
 	@BeforeMethod
-	public void setUp(String browser, String environment, String driverLocation) {
+	public void setUp(String browser, String environment) {
 		//Define Environment URLs
 		List<String> urls = utilities.Environments.setEnvironment(environment);
 		rmShop = urls.get(1);
 		//Initiate driver & mainPage
-		driver = utilities.DriverFactory.open(browser, driverLocation);
+		driver = utilities.DriverFactory.open(browser);
 		driver.get(rmShop);
 		//Initialise web elements
 		mainPage = new pages.MainPage(driver);

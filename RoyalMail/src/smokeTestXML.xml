@@ -1,9 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Tests" parallel="false">
+<suite name="SmokeTests" parallel="false">
   <parameter name="browser" value="headless"/>
   <parameter name="environment" value="prod"/>
-  <parameter name="driverLocation" value="D:\\Automation\\Applications\\Drivers\\"/>
-  <test name="SmokeTests">
+  <test name="PageTests">
     <classes>
       <class name="smokeTests.MainPage"/>
       <class name="smokeTests.LoginPage"/>
@@ -12,6 +11,7 @@
   <test name="OMS Tests">
     <classes>
       <class name="tests.OMSVisiblity"/>
+      <class name="tests.OMSCheckout"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

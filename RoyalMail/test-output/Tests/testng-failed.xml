@@ -3,15 +3,45 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
   <parameter name="environment" value="prod"/>
   <parameter name="browser" value="headless"/>
+  <parameter name="driverPath" value="D:\\Automation\\Applications\\Drivers\\"/>
   <test thread-count="5" name="SmokeTests(failed)">
     <classes>
       <class name="smokeTests.MainPage">
         <methods>
           <include name="setUp"/>
+          <include name="AccountCorrectDestination"/>
+          <include name="searchBarPresent"/>
+          <include name="mainpageBasketPresent"/>
           <include name="tearDown"/>
           <include name="resultsBlockPresent"/>
+          <include name="mainpageTitleCorrect"/>
+          <include name="BasketCorrectDestination"/>
+          <include name="mainpageLogoPresent"/>
+          <include name="mainpageAccountPresent"/>
+          <include name="LogoCorrectDestination"/>
         </methods>
       </class> <!-- smokeTests.MainPage -->
+      <class name="smokeTests.LoginPage">
+        <methods>
+          <include name="normalUserLogin"/>
+          <include name="omsUserLogin"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- smokeTests.LoginPage -->
     </classes>
   </test> <!-- SmokeTests(failed) -->
+  <test thread-count="5" name="OMS Tests(failed)">
+    <classes>
+      <class name="tests.OMSVisiblity">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="omsCategoryNotVisible"/>
+          <include name="omsCategoryVisible"/>
+          <include name="omsProductVisible"/>
+        </methods>
+      </class> <!-- tests.OMSVisiblity -->
+    </classes>
+  </test> <!-- OMS Tests(failed) -->
 </suite> <!-- Failed suite [Tests] -->
