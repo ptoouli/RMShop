@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="FullTests" parallel="false">
+  <parameter name="browser" value="headless"/>
+  <parameter name="environment" value="prod"/>
+  <test name="OMS Tests">
+    <classes>
+      <class name="tests.OMSVisiblity"/>
+      <class name="tests.OMScheckout"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
