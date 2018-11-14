@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Stream;
 
 
 public class CSV {
@@ -66,18 +65,10 @@ public class CSV {
 			ln = csv.get(i);
 			if (skuSearch.equalsIgnoreCase(ln[0])) {
 				row = ln;
-				System.out.println(i);
-				
 			} 
-			else {
-				
-			}
+			/*else {
+			}*/
 		}
-		
-		
-		System.out.println(row[0]);
 		return row;
-		
 	}
-	
 }

@@ -8,31 +8,34 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 	
-	public static WebDriver open(String browserType) {
+	public static WebDriver driver;
+	
+	public static void open(String browserType) {
 		
 		//Define driver folder path using config reader class
 		ConfigFileReader configFileReader = new ConfigFileReader();
-		String driverPath = configFileReader.getDriverPath();		
-		
+		String driverPath = configFileReader.getDriverPath();
+
+		ChromeOptions cOptions = new ChromeOptions();
 		
 		//Define the driver to use based on the browserType TestNG parameter
 		switch (browserType) {
 		case "firefox":	
 			System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
-			return new FirefoxDriver();
+			driver = new FirefoxDriver();
 		case "edge":
 			System.setProperty("webdriver.edge.driver", driverPath + "MicrosoftWebDriver.exe");
-			return new EdgeDriver();
+			driver = new EdgeDriver();
 		case "headless":
 			System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
-            options.addArguments("window-size=1200x600");
-            return new ChromeDriver(options);
+            cOptions.addArguments("headless");
+            cOptions.addArguments("window-size=1200x600");
+            driver = new ChromeDriver(cOptions);
             
        default:
     	   	System.setProperty("webdriver.chrome.driver", driverPath + "chromedriver.exe");
-			return new ChromeDriver();
+			cOptions.addArguments("window-size=2400x1200");
+            driver = new ChromeDriver(cOptions);
 		}
 		
 	}

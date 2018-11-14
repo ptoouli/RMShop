@@ -1,9 +1,10 @@
 package smokeTests;
 
 
-import java.util.List;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,8 +13,9 @@ import org.testng.annotations.Test;
 
 public class MainPage {
 	WebDriver driver;
+	WebDriverWait wait;
 	pages.MainPage mainPage = new pages.MainPage(driver);
-	String rmPage, rmLogin, loginURL, checkoutPage, rmShop;
+	String rmLogin, loginURL, checkoutPage, rmShop;
 	
 	@Test
 	public void mainpageLogoPresent() {
@@ -43,6 +45,7 @@ public class MainPage {
 	@Test
 	public void resultsBlockPresent() {
 		pages.MainPage.searchBar.sendKeys("s");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("klevuResultsBlock")));
 		Assert.assertTrue(mainPage.resultsBlock.isDisplayed());
 	}
 		
@@ -57,6 +60,7 @@ public class MainPage {
 	@Test
 	public void LogoCorrectDestination() throws InterruptedException {
 		//Check Logo goes to RM Main page
+		String rmPage = "https://www.royalmail.com/";
 		Assert.assertEquals(mainPage.logoButton.getAttribute("href"), rmPage, "Logo not going to " + rmPage);
 		mainPage.clickLogo();
 		Assert.assertEquals(driver.getCurrentUrl(), rmPage);
@@ -86,15 +90,17 @@ public class MainPage {
 	@BeforeMethod
 	public void setUp(String browser, String environment) {
 		//Define Environment URLs
-		List<String> urls = utilities.Environments.setEnvironment(environment);
-		rmPage = urls.get(0);
-		rmShop = urls.get(1);
+		String url = utilities.Environments.getEnvironment(environment);
+		rmShop = url;
 		rmLogin = rmShop + "customer/account/login/";
 		checkoutPage = rmShop + "checkout/cart/";
 		//Initiate driver & mainPage
-		driver = utilities.DriverFactory.open(browser);
+		utilities.DriverFactory.open(browser);
+		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements
+		wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".logo")));
 		mainPage = new pages.MainPage(driver);
 
 	}

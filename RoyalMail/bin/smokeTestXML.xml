@@ -2,16 +2,20 @@
 <suite name="SmokeTests" parallel="false">
   <parameter name="browser" value="headless"/>
   <parameter name="environment" value="prod"/>
+  <listeners>
+       <listener class-name="Listeners.TestListener"/>
+  </listeners>
   <test name="PageTests">
     <classes>
       <class name="smokeTests.MainPage"/>
       <class name="smokeTests.LoginPage"/>
+      <class name="smokeTests.ProductDetailsPage"/>
     </classes>
   </test> <!-- Test -->
   <test name="OMS Tests">
     <classes>
       <class name="tests.OMSVisiblity"/>
-      <class name="tests.OMSCheckout"/>
+      <class name="tests.OMSFunctional"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

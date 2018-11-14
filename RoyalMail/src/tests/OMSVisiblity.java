@@ -60,10 +60,11 @@ public class OMSVisiblity {
 	@BeforeMethod
 	public void setUp(String browser, String environment) {
 		//Define Environment URLs
-		List<String> urls = utilities.Environments.setEnvironment(environment);
-		rmShop = urls.get(1);
+		String url = utilities.Environments.getEnvironment(environment);
+		rmShop = url;
 		//Initiate driver & mainPage
-		driver = utilities.DriverFactory.open(browser);
+		utilities.DriverFactory.open(browser);
+		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements
 		mainPage = new pages.MainPage(driver);

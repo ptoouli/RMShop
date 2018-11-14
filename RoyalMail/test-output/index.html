@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,8 +37,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+            <a href="#" class="navigator-link" panel-name="suite-SmokeTests">
+              <span class="suite-name border-failed">SmokeTests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,37 +48,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Paul\AppData\Local\Temp\testng-eclipse-1522751723\testng-customsuite.xml</span>
+                  <a href="#" class="navigator-link " panel-name="test-xml-SmokeTests">
+                    <span>C:\Users\Paul\git\repository\RoyalMail\src\smokeTestXML.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
-                    <span class="test-stats">1 test</span>
+                  <a href="#" class="navigator-link " panel-name="testlist-SmokeTests">
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="group-SmokeTests">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="times-SmokeTests">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="reporter-SmokeTests">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-SmokeTests">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                  <a href="#" class="navigator-link " panel-name="chronological-SmokeTests">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -91,21 +91,115 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">18 methods, 2 failed,   16 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-SmokeTests" class="hide-methods failed suite-SmokeTests"> (hide)</a> <!-- hide-methods failed suite-SmokeTests -->
+                      <a href="#" panel-name="suite-SmokeTests" class="show-methods failed suite-SmokeTests"> (show)</a> <!-- show-methods failed suite-SmokeTests -->
+                    </span>
+                    <div class="method-list-content failed suite-SmokeTests">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.ProductDetailsPage" hash-for-method="alwaysFails">alwaysFails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="resultsBlockPresent">resultsBlockPresent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-SmokeTests -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
                     <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-SmokeTests" class="hide-methods passed suite-SmokeTests"> (hide)</a> <!-- hide-methods passed suite-SmokeTests -->
+                      <a href="#" panel-name="suite-SmokeTests" class="show-methods passed suite-SmokeTests"> (show)</a> <!-- show-methods passed suite-SmokeTests -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content passed suite-SmokeTests">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="tests.OMSCheckout" hash-for-method="ProductPage">ProductPage</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="AccountCorrectDestination">AccountCorrectDestination</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="BasketCorrectDestination">BasketCorrectDestination</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="LogoCorrectDestination">LogoCorrectDestination</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSFunctional" hash-for-method="SearchResultGoToProduct">SearchResultGoToProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSFunctional" hash-for-method="SearchResultsName">SearchResultsName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSFunctional" hash-for-method="SearchResultsSKU">SearchResultsSKU</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="mainpageAccountPresent">mainpageAccountPresent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="mainpageBasketPresent">mainpageBasketPresent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="mainpageLogoPresent">mainpageLogoPresent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="mainpageTitleCorrect">mainpageTitleCorrect</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.LoginPage" hash-for-method="normalUserLogin">normalUserLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSVisiblity" hash-for-method="omsCategoryNotVisible">omsCategoryNotVisible</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSVisiblity" hash-for-method="omsCategoryVisible">omsCategoryVisible</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="tests.OMSVisiblity" hash-for-method="omsProductVisible">omsProductVisible</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.LoginPage" hash-for-method="omsUserLogin">omsUserLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SmokeTests" title="smokeTests.MainPage" hash-for-method="searchBarPresent">searchBarPresent</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SmokeTests -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,123 +210,592 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+        <div panel-name="suite-SmokeTests" class="panel SmokeTests">
+          <div class="suite-SmokeTests-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">tests.OMSCheckout</span>
+              <img src="failed.png"/>
+              <span class="class-name">smokeTests.MainPage</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="ProductPage">
-                  </a> <!-- ProductPage -->
-                  <span class="method-name">ProductPage</span>
+                  <a name="resultsBlockPresent">
+                  </a> <!-- resultsBlockPresent -->
+                  <span class="method-name">resultsBlockPresent</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at smokeTests.MainPage.resultsBlockPresent(MainPage.java:46)
+... Removed 29 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
-        </div> <!-- panel Default_suite -->
-        <div panel-name="test-xml-Default_suite" class="panel">
+          </div> <!-- suite-SmokeTests-class-failed -->
+          <div class="suite-SmokeTests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">smokeTests.ProductDetailsPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="alwaysFails">
+                  </a> <!-- alwaysFails -->
+                  <span class="method-name">alwaysFails</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [0] but found [1]
+	at smokeTests.ProductDetailsPage.alwaysFails(ProductDetailsPage.java:20)
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTests-class-failed -->
+          <div class="suite-SmokeTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">smokeTests.MainPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AccountCorrectDestination">
+                  </a> <!-- AccountCorrectDestination -->
+                  <span class="method-name">AccountCorrectDestination</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="BasketCorrectDestination">
+                  </a> <!-- BasketCorrectDestination -->
+                  <span class="method-name">BasketCorrectDestination</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="LogoCorrectDestination">
+                  </a> <!-- LogoCorrectDestination -->
+                  <span class="method-name">LogoCorrectDestination</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="mainpageAccountPresent">
+                  </a> <!-- mainpageAccountPresent -->
+                  <span class="method-name">mainpageAccountPresent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="mainpageBasketPresent">
+                  </a> <!-- mainpageBasketPresent -->
+                  <span class="method-name">mainpageBasketPresent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="mainpageLogoPresent">
+                  </a> <!-- mainpageLogoPresent -->
+                  <span class="method-name">mainpageLogoPresent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="mainpageTitleCorrect">
+                  </a> <!-- mainpageTitleCorrect -->
+                  <span class="method-name">mainpageTitleCorrect</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchBarPresent">
+                  </a> <!-- searchBarPresent -->
+                  <span class="method-name">searchBarPresent</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTests-class-passed -->
+          <div class="suite-SmokeTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.OMSFunctional</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchResultGoToProduct">
+                  </a> <!-- SearchResultGoToProduct -->
+                  <span class="method-name">SearchResultGoToProduct</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchResultsName">
+                  </a> <!-- SearchResultsName -->
+                  <span class="method-name">SearchResultsName</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SearchResultsSKU">
+                  </a> <!-- SearchResultsSKU -->
+                  <span class="method-name">SearchResultsSKU</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTests-class-passed -->
+          <div class="suite-SmokeTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">smokeTests.LoginPage</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="normalUserLogin">
+                  </a> <!-- normalUserLogin -->
+                  <span class="method-name">normalUserLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="omsUserLogin">
+                  </a> <!-- omsUserLogin -->
+                  <span class="method-name">omsUserLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTests-class-passed -->
+          <div class="suite-SmokeTests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.OMSVisiblity</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="omsCategoryNotVisible">
+                  </a> <!-- omsCategoryNotVisible -->
+                  <span class="method-name">omsCategoryNotVisible</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="omsCategoryVisible">
+                  </a> <!-- omsCategoryVisible -->
+                  <span class="method-name">omsCategoryVisible</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="omsProductVisible">
+                  </a> <!-- omsProductVisible -->
+                  <span class="method-name">omsProductVisible</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SmokeTests-class-passed -->
+        </div> <!-- panel SmokeTests -->
+        <div panel-name="test-xml-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Paul\AppData\Local\Temp\testng-eclipse-1522751723\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Paul\git\repository\RoyalMail\src\smokeTestXML.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;SmokeTests&quot;&gt;
   &lt;parameter name=&quot;environment&quot; value=&quot;prod&quot;/&gt;
   &lt;parameter name=&quot;browser&quot; value=&quot;headless&quot;/&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;Listeners.TestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;PageTests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.OMSCheckout&quot;/&gt;
+      &lt;class name=&quot;smokeTests.MainPage&quot;/&gt;
+      &lt;class name=&quot;smokeTests.LoginPage&quot;/&gt;
+      &lt;class name=&quot;smokeTests.ProductDetailsPage&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Default test --&gt;
-&lt;/suite&gt; &lt;!-- Default suite --&gt;
+  &lt;/test&gt; &lt;!-- PageTests --&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;OMS Tests&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.OMSVisiblity&quot;/&gt;
+      &lt;class name=&quot;tests.OMSFunctional&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- OMS Tests --&gt;
+&lt;/suite&gt; &lt;!-- SmokeTests --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Default_suite" class="panel">
+        <div panel-name="testlist-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Default suite</span>
+            <span class="header-content">Tests for SmokeTests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Default test (1 class)</span>
+                <span class="test-name">PageTests (3 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">OMS Tests (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Default_suite" class="panel">
+        <div panel-name="group-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Default suite</span>
+            <span class="header-content">Groups for SmokeTests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Default_suite" class="panel">
+        <div panel-name="times-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Default suite</span>
+            <span class="header-content">Times for SmokeTests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Default_suite');
-function tableData_Default_suite() {
+suiteTableInitFunctions.push('tableData_SmokeTests');
+function tableData_SmokeTests() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(18);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'ProductPage')
-data.setCell(0, 2, 'tests.OMSCheckout')
-data.setCell(0, 3, 8);
-window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+data.setCell(0, 1, 'AccountCorrectDestination')
+data.setCell(0, 2, 'smokeTests.MainPage')
+data.setCell(0, 3, 35193);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'normalUserLogin')
+data.setCell(1, 2, 'smokeTests.LoginPage')
+data.setCell(1, 3, 8905);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'omsUserLogin')
+data.setCell(2, 2, 'smokeTests.LoginPage')
+data.setCell(2, 3, 8880);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'omsProductVisible')
+data.setCell(3, 2, 'tests.OMSVisiblity')
+data.setCell(3, 3, 8719);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'omsCategoryNotVisible')
+data.setCell(4, 2, 'tests.OMSVisiblity')
+data.setCell(4, 3, 8691);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'omsCategoryVisible')
+data.setCell(5, 2, 'tests.OMSVisiblity')
+data.setCell(5, 3, 7917);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'BasketCorrectDestination')
+data.setCell(6, 2, 'smokeTests.MainPage')
+data.setCell(6, 3, 4643);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'SearchResultGoToProduct')
+data.setCell(7, 2, 'tests.OMSFunctional')
+data.setCell(7, 3, 3774);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'SearchResultsName')
+data.setCell(8, 2, 'tests.OMSFunctional')
+data.setCell(8, 3, 1315);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'LogoCorrectDestination')
+data.setCell(9, 2, 'smokeTests.MainPage')
+data.setCell(9, 3, 1209);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'SearchResultsSKU')
+data.setCell(10, 2, 'tests.OMSFunctional')
+data.setCell(10, 3, 765);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'resultsBlockPresent')
+data.setCell(11, 2, 'smokeTests.MainPage')
+data.setCell(11, 3, 605);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'mainpageBasketPresent')
+data.setCell(12, 2, 'smokeTests.MainPage')
+data.setCell(12, 3, 148);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'mainpageAccountPresent')
+data.setCell(13, 2, 'smokeTests.MainPage')
+data.setCell(13, 3, 138);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'mainpageLogoPresent')
+data.setCell(14, 2, 'smokeTests.MainPage')
+data.setCell(14, 3, 102);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'searchBarPresent')
+data.setCell(15, 2, 'smokeTests.MainPage')
+data.setCell(15, 3, 36);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'mainpageTitleCorrect')
+data.setCell(16, 2, 'smokeTests.MainPage')
+data.setCell(16, 3, 29);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'alwaysFails')
+data.setCell(17, 2, 'smokeTests.ProductDetailsPage')
+data.setCell(17, 3, 1);
+window.suiteTableData['SmokeTests']= { tableData: data, tableDiv: 'times-div-SmokeTests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 8 ms</span>
-              <div id="times-div-Default_suite">
-              </div> <!-- times-div-Default_suite -->
+              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <div id="times-div-SmokeTests">
+              </div> <!-- times-div-SmokeTests -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Default_suite" class="panel">
+        <div panel-name="reporter-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Default suite</span>
+            <span class="header-content">Reporter output for SmokeTests</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Default_suite" class="panel">
+        <div panel-name="ignored-methods-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Default_suite" class="panel">
+        <div panel-name="chronological-SmokeTests" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.OMSCheckout</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">smokeTests.MainPage</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(headless, prod)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">ProductPage</span>
-                <span class="method-start">11394 ms</span>
+                <span class="method-name">AccountCorrectDestination</span>
+                <span class="method-start">46693 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11403 ms</span>
+                <span class="method-start">81888 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">81961 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">BasketCorrectDestination</span>
+                <span class="method-start">107486 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">112130 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">112201 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">LogoCorrectDestination</span>
+                <span class="method-start">118827 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">120036 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">120157 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">mainpageAccountPresent</span>
+                <span class="method-start">125332 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">125470 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">125592 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">mainpageBasketPresent</span>
+                <span class="method-start">130634 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">130783 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">130850 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">mainpageLogoPresent</span>
+                <span class="method-start">135635 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">135738 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">135865 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">mainpageTitleCorrect</span>
+                <span class="method-start">140805 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">140835 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">140903 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">resultsBlockPresent</span>
+                <span class="method-start">146244 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">148110 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">148179 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">searchBarPresent</span>
+                <span class="method-start">153415 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">153452 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">smokeTests.LoginPage</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">153524 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">normalUserLogin</span>
+                <span class="method-start">158522 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">167428 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">167498 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">omsUserLogin</span>
+                <span class="method-start">172937 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">181817 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">smokeTests.ProductDetailsPage</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">181887 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">alwaysFails</span>
+                <span class="method-start">192396 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">193633 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.OMSVisiblity</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">193734 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">omsCategoryNotVisible</span>
+                <span class="method-start">207750 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">216442 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">216515 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">omsCategoryVisible</span>
+                <span class="method-start">231281 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">239198 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">239268 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">omsProductVisible</span>
+                <span class="method-start">254037 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">262757 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.OMSFunctional</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">262829 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SearchResultGoToProduct</span>
+                <span class="method-start">305762 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">309536 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">309606 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SearchResultsName</span>
+                <span class="method-start">405312 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">406628 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(headless, prod)</span>
+                <span class="method-start">406699 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">SearchResultsSKU</span>
+                <span class="method-start">419443 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">420209 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

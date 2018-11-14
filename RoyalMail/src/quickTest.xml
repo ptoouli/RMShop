@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SmokeTests" parallel="false">
+  <parameter name="browser" value="headless"/>
+  <parameter name="environment" value="prod"/>
+  <listeners>
+       <listener class-name="Listeners.TestListener"/>
+  </listeners>
+  <test name="PageTests">
+    <classes>
+      <class name="smokeTests.ProductDetailsPage"/>
+ 	</classes>
+  </test>
+</suite> <!-- Suite -->

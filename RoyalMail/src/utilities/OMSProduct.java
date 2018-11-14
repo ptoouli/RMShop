@@ -1,6 +1,6 @@
 package utilities;
 
-public class OMSProductDetails {
+public class OMSProduct {
 	public static String sku, attributeSetCode, productType, categories, productWebsites, 
 		name, description, shortDescription, productOnline, taxClassName, visibility, price, metaTitle, brand, 
 		europeDeliveryCost, supplier, ukDeliveryCost, worldDeliveryCost, minCartQty, useConfigMinSaleQty, maxCartQty, 

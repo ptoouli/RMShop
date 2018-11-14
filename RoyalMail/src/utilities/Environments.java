@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Environments {
 	
-	public static List<String> setEnvironment(String environment) {
+/*	public static List<String> setEnvironment(String environment) {
 		String rmPage, rmShop;
 		
 		if (environment.equalsIgnoreCase("prod")) {
@@ -29,6 +29,11 @@ public class Environments {
 		List<String> urls = Arrays.asList(rmPage, rmShop);
 		return urls;
 
+	}*/
+	
+	public static String getEnvironment(String environment) {
+		String envURL = utilities.ConfigFileReader.getEnvironmentURL(environment);
+		return envURL;
 	}
 
 }

@@ -8,7 +8,7 @@ import java.util.Properties;
  
 public class ConfigFileReader {
 	
-	private Properties properties;
+	private static Properties properties;
 	private final String propertyFilePath= "Files/config.properties";
  
 	//Get Driver Folder Path from properties file
@@ -17,12 +17,23 @@ public class ConfigFileReader {
 		return driverPath;
 	}
 	
-	//Get oms products file from properties fiel
+	//Get oms products file from properties file
 	public String getOMSProducts() {
 		String omsProducts = properties.getProperty("omsProducts");
 		return omsProducts;
 	}
 	
+	//Get defect screenshot location from properties file
+	public String getDefectScreenshot() {
+		String omsProducts = properties.getProperty("defectScreenshotPath");
+		return omsProducts;
+	}
+	
+	//Get the url for the environment
+	public static String getEnvironmentURL(String environment) {
+		String envURL = properties.getProperty(environment);
+		return envURL;
+	}
 	
 	//Constructor
 	public ConfigFileReader(){
