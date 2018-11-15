@@ -2,19 +2,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [SmokeTests]">
   <parameter name="environment" value="prod"/>
-  <parameter name="browser" value="headless"/>
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="Listeners.TestListener"/>
   </listeners>
   <test thread-count="5" name="PageTests(failed)">
     <classes>
-      <class name="smokeTests.MainPage">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="resultsBlockPresent"/>
-        </methods>
-      </class> <!-- smokeTests.MainPage -->
       <class name="smokeTests.ProductDetailsPage">
         <methods>
           <include name="alwaysFails"/>

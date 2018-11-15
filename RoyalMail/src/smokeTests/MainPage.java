@@ -1,10 +1,7 @@
 package smokeTests;
 
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,7 +10,6 @@ import org.testng.annotations.Test;
 
 public class MainPage {
 	WebDriver driver;
-	WebDriverWait wait;
 	pages.MainPage mainPage = new pages.MainPage(driver);
 	String rmLogin, loginURL, checkoutPage, rmShop;
 	
@@ -45,7 +41,7 @@ public class MainPage {
 	@Test
 	public void resultsBlockPresent() {
 		pages.MainPage.searchBar.sendKeys("s");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("klevuResultsBlock")));
+		utilities.WaitForElement.id("klevuResultsBlock", driver);
 		Assert.assertTrue(mainPage.resultsBlock.isDisplayed());
 	}
 		
@@ -99,8 +95,7 @@ public class MainPage {
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements
-		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".logo")));
+		utilities.WaitForElement.css(".logo", driver);
 		mainPage = new pages.MainPage(driver);
 
 	}

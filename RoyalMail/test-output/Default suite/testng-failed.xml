@@ -5,7 +5,7 @@
     <classes>
       <class name="smokeTests.ProductDetailsPage">
         <methods>
-          <include name="mainpageLogoPresent"/>
+          <include name="alwaysFails"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>

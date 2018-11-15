@@ -1,11 +1,6 @@
 package tests;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +10,6 @@ import org.testng.annotations.Test;
 public class MBG {
 	
 	WebDriver driver;
-	WebDriverWait wait;
 	pages.MainPage mainPage = new pages.MainPage(driver);
 	pages.LoginPage loginPage = new pages.LoginPage(driver);
 	pages.ProductDetailsPage productPage = new pages.ProductDetailsPage(driver);
@@ -27,9 +21,9 @@ public class MBG {
 		utilities.OMSProduct.specificProduct("MBG");
 		String sku = utilities.OMSProduct.sku;
 		//Search for product by sku
-		pages.MainPage.productSearch(sku);
+		pages.MainPage.productSearch(sku, driver);
 		//Wait for search results to be visible
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"productsList\"]/ul/li/a"))));
+		utilities.WaitForElement.xpath("//*[@id=\"productsList\"]/ul/li/a", driver);
 		//Re-initialise elements
 		mainPage = new pages.MainPage(driver);
 		//Click the first result
@@ -37,7 +31,7 @@ public class MBG {
 		//initialise product page
 		productPage = new pages.ProductDetailsPage(driver);
 		//Wait for page to load
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("product-options-wrapper")));
+		utilities.WaitForElement.id("product-options-wrapper", driver);
 		//Check all of the MBG options are visible
 		Assert.assertTrue(productPage.mbgOptionsWrapper.isDisplayed(), "MBG options wrapper is not visible");
 		Assert.assertTrue(productPage.mbgOption1Radio.isDisplayed(), "MBG option1 is not visible");
@@ -46,7 +40,7 @@ public class MBG {
 		//Check the text box is NOT displayed before any option is selected
 		Assert.assertFalse(productPage.mbgBox.isDisplayed(), "MBG Option 2 text box is visible without clicking option2");
 		//Check the text box is displayed when option 2 is selected
-		wait.until(ExpectedConditions.elementToBeClickable(productPage.mbgOption2Radio));
+		utilities.WaitForElement.clickable(productPage.mbgOption2Radio, driver);
 		productPage.mbgOption2Radio.click();
 		Assert.assertTrue(productPage.mbgBox.isDisplayed(), "MBG Option 2 text box is not visible");
 		//Check the text box is not displayed when option 1 is select
@@ -72,13 +66,12 @@ public class MBG {
 		//Initialise web elements
 		mainPage = new pages.MainPage(driver);
 		//Wait for page to load
-		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".logo")));
+		utilities.WaitForElement.css(".logo", driver);
 		mainPage.closeCookiesButton.click();
 		//Login as OMS User
 		mainPage.clickAccount();
 		//Wait for page to load
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("edit-submit")));
+		utilities.WaitForElement.id("edit-submit", driver);
 		//Login as OMS user
 		loginPage = new pages.LoginPage(driver);
 		loginPage.login("oms");

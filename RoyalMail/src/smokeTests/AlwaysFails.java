@@ -7,16 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class ProductDetailsPage {
+public class AlwaysFails {
+
 	WebDriver driver;
 	pages.MainPage mainPage = new pages.MainPage(driver);
 	String rmShop;
-
 	
 	@Test
 	public void alwaysFails() {
-		//Check RM Logo is Visible
-		pages.MainPage.selectSearchResults("s", 1, driver);
 		Assert.assertEquals("1", "0");
 	}
 	
@@ -41,4 +39,5 @@ public class ProductDetailsPage {
 	public void tearDown() {
 		//driver.close();
 	}
+	
 }

@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;;
 public class OMSFunctional {
 	
 	WebDriver driver;
-	WebDriverWait wait;
 	pages.MainPage mainPage = new pages.MainPage(driver);
 	pages.LoginPage loginPage = new pages.LoginPage(driver);
 	pages.ProductDetailsPage productPage = new pages.ProductDetailsPage(driver);
@@ -29,11 +28,9 @@ public class OMSFunctional {
 		String sku = utilities.OMSProduct.sku;
 		String name = utilities.OMSProduct.name;
 		//Search for product by sku
-		pages.MainPage.productSearch(sku);
+		pages.MainPage.productSearch(sku, driver);
 		//Wait for search results to be visible
-		wait.until(ExpectedConditions
-			.visibilityOfElementLocated((By
-					.xpath("//*[@id=\"productsList\"]/ul/li/a"))));
+		utilities.WaitForElement.xpath("//*[@id=\"productsList\"]/ul/li/a", driver);
 		//Re-initialise elements
 		mainPage = new pages.MainPage(driver);
 		WebElement results = mainPage.firstResult;
@@ -57,9 +54,9 @@ public class OMSFunctional {
 		String sku = utilities.OMSProduct.sku;
 		String name = utilities.OMSProduct.name;
 		//Search for product by sku
-		pages.MainPage.productSearch(name);
+		pages.MainPage.productSearch(name, driver);
 		//Wait for search results to be visible
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"productsList\"]/ul/li/a"))));
+		utilities.WaitForElement.xpath("//*[@id=\"productsList\"]/ul/li/a", driver);
 		//Re-initialise elements
 		mainPage = new pages.MainPage(driver);
 		WebElement results = mainPage.firstResult;
@@ -83,15 +80,15 @@ public class OMSFunctional {
 		String sku = utilities.OMSProduct.sku;
 		String name = utilities.OMSProduct.name;
 		//Search for product by sku
-		pages.MainPage.productSearch(sku);
+		pages.MainPage.productSearch(sku, driver);
 		//Wait for search results to be visible
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"productsList\"]/ul/li/a"))));
+		utilities.WaitForElement.xpath("//*[@id=\"productsList\"]/ul/li/a", driver);
 		//Re-initialise elements
 		mainPage = new pages.MainPage(driver);
 		//Click the first result
 		mainPage.firstResult.click();
 		//initialise product page
-		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("qty"))));
+		utilities.WaitForElement.id("qty", driver);
 		productPage = new pages.ProductDetailsPage(driver);
 		WebElement results = pages.ProductDetailsPage.productNameText;
 		//verify correct product page
@@ -124,12 +121,11 @@ public class OMSFunctional {
 		//Initialise web elements
 		mainPage = new pages.MainPage(driver);
 		//Wait for page to load
-		wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".logo")));
+		utilities.WaitForElement.css(".logo", driver);
 		//Login as OMS User
 		mainPage.clickAccount();
 		//Wait for page to load
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("edit-submit")));
+		utilities.WaitForElement.id("edit-submit", driver);
 		//Login as OMS user
 		loginPage = new pages.LoginPage(driver);
 		loginPage.login("oms");

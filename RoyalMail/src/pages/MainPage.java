@@ -1,9 +1,14 @@
 package pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
 	
@@ -28,7 +33,7 @@ public class MainPage {
 	@FindBy(id="productsList") public WebElement productsList;
 	//First Result
 	@FindBy (xpath="//*[@id=\"productsList\"]/ul/li/a/div[2]/div[2]")
-		public WebElement firstResult;
+		public static WebElement firstResult;
 	//OMS Category (only visible once logged in as OMS user)
 	@FindBy(css=".v-navigation__link--url-online-mail-supplies")
 		public WebElement omsCategory;
@@ -49,15 +54,24 @@ public class MainPage {
 		basketButton.click();
 	}
 	
-	public static void productSearch(String product) {
+	public static void productSearch(String product, WebDriver driver) {
+		searchBar.clear();
 		searchBar.sendKeys(product);
+		//Wait for first search result to be visible
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By
+				.xpath("//*[@id=\"productsList\"]/ul/li[1]")));
 	}
 	
-	public void selectSearchResults(String product, Integer result) {
-		productSearch(product);
-		//List<WebElement> childs = rootWebElement.findElements(By.xpath(".//*"));
-		///html/body/div[2]/header/div[1]/div[1]/div[2]/form/div[1]/div/div[2]/div[3]/div[3]/div[2]/ul/li[2]
-		
+	public static void selectSearchResults(String product, Integer result, WebDriver driver) {
+		//Search for string in search bar
+		productSearch(product, driver);
+		//List all result web elements
+		List<WebElement> childs = driver.findElements(By.xpath("//*[@id=\"productsList\"]/ul/*"));
+		//The third search result would be the second element in the list
+		int i = result - 1;
+		//Click the selected search result
+		childs.get(i).click();
 	}
 	
 	public MainPage(WebDriver driver) {
