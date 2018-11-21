@@ -18,16 +18,16 @@ public class AlwaysFails {
 		Assert.assertEquals("1", "0");
 	}
 	
-	@Parameters({"browser", "environment", "runHeadless"})
+	@Parameters({"browser", "environment"})
 	
 	
 	@BeforeMethod
-	public void setUp(String browser, String environment, Boolean runHeadless) {
+	public void setUp(String browser, String environment) {
 		//Define Environment URLs
 		String url = utilities.Environments.getEnvironment(environment);
 		rmShop = url;
 		//Initiate driver & mainPage
-		utilities.DriverFactory.open(browser, runHeadless);
+		utilities.DriverFactory.open(browser);
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements

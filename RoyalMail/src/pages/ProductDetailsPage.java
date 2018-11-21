@@ -9,29 +9,17 @@ public class ProductDetailsPage {
 	
 	WebDriver driver;
 	//Breadcrumbs for product
-	@FindBy(css = ".breadcrumbs") 
-	public WebElement productBreadcrumbs;
-	
+	@FindBy(css = ".breadcrumbs") public WebElement productBreadcrumbs;
 	//Product Name
-	@FindBy(css = ".page-title") 
-	public static WebElement productNameText;
-	
+	@FindBy(css = ".page-title") public static WebElement productNameText;
 	//Product sku
-	@FindBy (css = "div.value:nth-child(2)") 
-	public WebElement productSKUText;
-	
+	@FindBy (css = "div.value:nth-child(2)") public WebElement productSKUText;
 	//Issue Date code of product
-	@FindBy(css = "div.product:nth-child(4) > div:nth-child(2)") 
-	public WebElement productIssueDateText;
-	
+	@FindBy(css = "div.product:nth-child(4) > div:nth-child(2)") public WebElement productIssueDateText;
 	//Product Description text on right
-	@FindBy(css = "div.product:nth-child(5)") 
-	public WebElement productDescriptionText;
-	
+	@FindBy(css = "div.product:nth-child(5)") public WebElement productDescriptionText;
 	//In Stock / Out of Stock text
-	@FindBy(css = "div.stock:nth-child(1)") 
-	public WebElement productStockStatusText;
-	
+	@FindBy(css = "div.stock:nth-child(1)") public WebElement productStockStatusText;
 	//Delivery Estimate text
 	@FindBy(css = "div.attribute:nth-child(2)") public WebElement productDeliveryEstimateText;
 	//Product price in £XX.XX text format

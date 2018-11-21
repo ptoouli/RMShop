@@ -7,7 +7,7 @@
   </listeners>
   <test name="PageTests">
     <classes>
-      <class name="tests.MBG"/>
+      <class name="smokeTests.AlwaysFails"/>
  	</classes>
   </test>
 </suite> <!-- Suite -->

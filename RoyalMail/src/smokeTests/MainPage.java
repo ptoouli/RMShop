@@ -80,18 +80,18 @@ public class MainPage {
 		Assert.assertEquals(driver.getCurrentUrl(),checkoutPage);
 	}
 	
-	@Parameters({"browser", "environment", "runHeadless"})
+	@Parameters({"browser", "environment"})
 	
 	
 	@BeforeMethod
-	public void setUp(String browser, String environment, Boolean runHeadless) {
+	public void setUp(String browser, String environment) {
 		//Define Environment URLs
 		String url = utilities.Environments.getEnvironment(environment);
 		rmShop = url;
 		rmLogin = rmShop + "customer/account/login/";
 		checkoutPage = rmShop + "checkout/cart/";
 		//Initiate driver & mainPage
-		utilities.DriverFactory.open(browser, runHeadless);
+		utilities.DriverFactory.open(browser);
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements

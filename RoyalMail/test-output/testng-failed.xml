@@ -8,13 +8,13 @@
   </listeners>
   <test thread-count="5" name="PageTests(failed)">
     <classes>
-      <class name="tests.MBG">
+      <class name="smokeTests.ProductDetailsPage">
         <methods>
-          <include name="MBGPage"/>
-          <include name="tearDown"/>
+          <include name="alwaysFails"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- tests.MBG -->
+      </class> <!-- smokeTests.ProductDetailsPage -->
     </classes>
   </test> <!-- PageTests(failed) -->
 </suite> <!-- Failed suite [SmokeTests] -->

@@ -22,8 +22,7 @@ public class OMSFunctional {
 	String rmShop, email, password;
 	
 	@Test
-  	public void SearchResultsSKU() 
-	{
+  	public void SearchResultsSKU() {
 		//Search for a random oms product
 		utilities.OMSProduct.RandomProduct();
 		String sku = utilities.OMSProduct.sku;
@@ -38,55 +37,41 @@ public class OMSFunctional {
 		String actualResult = results.getText();
 		String expectedResult = name;
 		  
-		try 
-		{
+		try {
 			Assert.assertEquals(actualResult, expectedResult);
-		} 
-		catch (AssertionError e) 
-		{
-			System.out.println("SearchResultsSKU --- Expected " + 
-								expectedResult + ", but got " + actualResult + 
-								", using sku: " + sku
-								);
-		    throw e;
+			} catch (AssertionError e) {
+				System.out.println("SearchResultsSKU --- Expected " + 
+						expectedResult + ", but got " + actualResult + 
+			    			", using sku: " + sku);
+			    throw e;
+			}
 		}
-	}
 	
 	@Test
-  	public void SearchResultsName() 
-	{
+  	public void SearchResultsName() {
 		//Search for a random oms product
 		utilities.OMSProduct.RandomProduct();
 		String sku = utilities.OMSProduct.sku;
 		String name = utilities.OMSProduct.name;
-		
 		//Search for product by sku
 		pages.MainPage.productSearch(name, driver);
-		
 		//Wait for search results to be visible
 		utilities.WaitForElement.xpath("//*[@id=\"productsList\"]/ul/li/a", driver);
-		
 		//Re-initialise elements
 		mainPage = new pages.MainPage(driver);
 		WebElement results = mainPage.firstResult;
-		
-		
 		String actualResult = results.getText();
 		String expectedResult = name;
-		
-		try 
-		{
+		  
+		try {
 			Assert.assertEquals(actualResult, expectedResult);
-		} 
-		catch (AssertionError e) 
-		{
-			System.out.println("SearchResultsName --- Expected \"" + 
-								expectedResult + "\", but got \"" + actualResult + 
-								"\", using sku: " + sku
-							  );
-		   throw e;
+			} catch (AssertionError e) {
+				System.out.println("SearchResultsName --- Expected \"" + 
+						expectedResult + "\", but got \"" + actualResult + 
+			    			"\", using sku: " + sku);
+			    throw e;
+			}
 		}
-	}
 	
 	@Test
   	public void SearchResultGoToProduct() {
@@ -122,15 +107,15 @@ public class OMSFunctional {
 	
 
 	
-	@Parameters({"browser", "environment", "runHeadless"})
+	@Parameters({"browser", "environment"})
   
 	@BeforeMethod
-	public void setUp(String browser, String environment, Boolean runHeadless) {
+	public void setUp(String browser, String environment) {
 		//Define Environment URLs
 		String url = utilities.Environments.getEnvironment(environment);
 		rmShop = url;
 		//Initiate driver & mainPage
-		utilities.DriverFactory.open(browser, runHeadless);
+		utilities.DriverFactory.open(browser);
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements

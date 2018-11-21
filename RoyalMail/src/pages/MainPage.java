@@ -16,18 +16,14 @@ public class MainPage {
 	//Expected Title
 	public String expectedTitle = "Royal Mail | Shop";
 	// RM Logo Top Left Corner
-	@FindBy(css = ".logo") 
-	public WebElement logoButton;
-	
+	@FindBy(css = ".logo") public WebElement logoButton;
 	//Account Button
 	@FindBy(xpath="/html/body/div[2]/header/div[1]/ul/li/a")
 		public WebElement accountButton;
-	
 	//Account Button after login
 	@FindBy(xpath="/html/body/div[2]/header/div[1]/ul/li/span")
 		public WebElement customerButton;
 	//Basket Icon
-	
 	@FindBy(css=".showcart") public WebElement basketButton;
 	//Search Bar
 	@FindBy(id="search") public static WebElement searchBar;
