@@ -40,7 +40,7 @@ public class MBG {
 		//Check the text box is NOT displayed before any option is selected
 		Assert.assertFalse(productPage.mbgBox.isDisplayed(), "MBG Option 2 text box is visible without clicking option2");
 		//Check the text box is displayed when option 2 is selected
-		utilities.WaitForElement.clickable(productPage.mbgOption2Radio, driver);
+		utilities.WaitForElement.elementClickable(productPage.mbgOption2Radio, driver);
 		productPage.mbgOption2Radio.click();
 		Assert.assertTrue(productPage.mbgBox.isDisplayed(), "MBG Option 2 text box is not visible");
 		//Check the text box is not displayed when option 1 is select
@@ -52,15 +52,15 @@ public class MBG {
 	}
 	
 	
-	@Parameters({"browser", "environment"})
+	@Parameters({"browser", "environment", "runHeadless"})
   
 	@BeforeMethod
-	public void setUp(String browser, String environment) {
+	public void setUp(String browser, String environment, Boolean runHeadless) {
 		//Define Environment URLs
 		String url = utilities.Environments.getEnvironment(environment);
 		rmShop = url;
 		//Initiate driver & mainPage
-		utilities.DriverFactory.open(browser);
+		utilities.DriverFactory.open(browser, runHeadless);
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements

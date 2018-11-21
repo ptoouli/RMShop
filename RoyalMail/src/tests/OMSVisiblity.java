@@ -55,15 +55,15 @@ public class OMSVisiblity {
 	}
 	
 	
-	@Parameters({"browser", "environment"})
+	@Parameters({"browser", "environment", "runHeadless"})
 	
 	@BeforeMethod
-	public void setUp(String browser, String environment) {
+	public void setUp(String browser, String environment, Boolean runHeadless) {
 		//Define Environment URLs
 		String url = utilities.Environments.getEnvironment(environment);
 		rmShop = url;
 		//Initiate driver & mainPage
-		utilities.DriverFactory.open(browser);
+		utilities.DriverFactory.open(browser, runHeadless);
 		driver = utilities.DriverFactory.driver;
 		driver.get(rmShop);
 		//Initialise web elements
